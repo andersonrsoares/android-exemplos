@@ -48,6 +48,7 @@ dependencies {
 
     implementation "com.android.support:appcompat-v7:$androidSupportVersion"
     implementation "com.android.support:recyclerview-v7:$androidSupportVersion"
+    implementation "com.android.support:design:$androidSupportVersion"
 
     // Picasso
     implementation "com.squareup.picasso:picasso:$picassoVersion"
@@ -62,10 +63,12 @@ dependencies {
     // OkHttp
     implementation "com.squareup.okhttp3:okhttp:$okHttpVersion"
     implementation "com.squareup.okhttp3:logging-interceptor:$okHttpVersion"
+    androidTestImplementation "com.squareup.okhttp3:mockwebserver:$okHttpVersion"
 
     // Retrofit
     implementation "com.squareup.retrofit2:retrofit:$retrofitVersion"
     implementation "com.squareup.retrofit2:converter-gson:$retrofitVersion"
+
 
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'com.android.support.test:runner:1.0.2'
@@ -75,5 +78,13 @@ dependencies {
     androidTestImplementation 'com.android.support.test:rules:1.0.2'
     androidTestImplementation 'com.android.support.test.uiautomator:uiautomator-v18:2.1.3'
     androidTestImplementation "com.android.support.test.espresso:espresso-intents:3.0.2"
+    androidTestImplementation "net.vidageek:mirror:1.6.1"
+    androidTestImplementation("com.android.support.test.espresso:espresso-contrib:$espressoVersion") {
+        exclude module: 'appcompat-v7'
+        exclude module: 'support-v4'
+        exclude module: 'support-annotations'
+        exclude module: 'recyclerview-v7'
+        exclude module: 'design'
+    }
 
 }
